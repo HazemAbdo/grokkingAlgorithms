@@ -77,4 +77,19 @@ console.log("recBinarySearch", recursiveBinarySearch([7], 7));
 console.log("-----------------------");
 console.log("recBinarySearch", recursiveBinarySearch([], 7));
 //-------------------------------------------------------------------------------
-function quickSort() {}
+function quickSort(arr) {
+  //base case if array is empty or has one element then no need to sort it
+  if (arr.length < 2) return arr;
+  //get a random int between 0 and arr.length
+  let pivot = arr[Math.floor(Math.random() * arr.length)];
+  let lessThanPivot = arr.filter((item) => item < pivot);
+  let greaterThanPivot = arr.filter((item) => item > pivot);
+  return [...quickSort(lessThanPivot), pivot, ...quickSort(greaterThanPivot)];
+}
+console.log(quickSort([]));
+console.log(quickSort([1]));
+console.log(quickSort([1, 2]));
+console.log(quickSort([2, 1]));
+console.log(quickSort([2, 1, 3, -1, 5, 6]));
+console.log(quickSort([2, 1, 3, -1, 5, 6, 7]));
+console.log(quickSort([, -20, 2, 1, 3, -1, 5, 6, 7]));
