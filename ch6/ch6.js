@@ -113,6 +113,7 @@ graph.addEdge("alice", "me");
 // graph.addEdge("claire", "thom");
 // graph.addEdge("claire", "jonny");
 // graph.addEdge("alice", "peggy");
+//Breadth-first search will find you the path with the fewest segments
 function breadthFirstSearch(nodeA, g) {
   let queue = new Queue();
   //If you don’t do this, you could also end up in an infinite loop
